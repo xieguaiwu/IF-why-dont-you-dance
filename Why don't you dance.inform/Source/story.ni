@@ -718,6 +718,9 @@ Check going when the room gone to is nothing:
 			say "The neighbor[']s yard, and the neighbor[']s window, and the neighbor watching. Let them watch from there.";
 	stop the action.
 
+BOOK 9C - Special Verb
+
+
 Book 10 - Being someone
 
 Instead of examining the player:
