@@ -1,0 +1,11 @@
+# Inform 7 build artefacts
+*.inform/Build/
+*.inform/Index/
+gameinfo.dbg
+*.ulx
+*.z8
+
+# Editor / OS noise
+*.swp
+*~
+.DS_Store

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifindex version="1.0" xmlns="http://babel.ifarchive.org/protocol/iFiction/">
+    <story>
+        <identification>
+            <ifid>1395612E-70A4-4430-979D-838BD31BF28C</ifid>
+            <format>glulx</format>
+        </identification>
+        <bibliographic>
+            <title>Why Don't You Dance</title>
+            <author>Raymond Carver</author>
+            <headline>An adaptation of a story by Raymond Carver</headline>
+            <genre>Literary</genre>
+            <firstpublished>2026</firstpublished>
+            <description>A house is emptied onto a lawn. Two people stop to look. Five acts, two points of view, and the thing that cannot be said.</description>
+            <language>en</language>
+            <group>Inform</group>
+        </bibliographic>
+        <releases>
+            <attached>
+                <release>
+                    <releasedate>2026-11-07</releasedate>
+                    <version>1</version>
+                    <compiler>Inform 7</compiler>
+                    <compilerversion>Inform 10.1.2 (build )</compilerversion>
+                </release>
+            </attached>
+        </releases>
+        <colophon>
+            <generator>Inform 7</generator>
+            <generatorversion>Inform 10.1.2 (build )</generatorversion>
+            <originated>2026-11-07</originated>
+        </colophon>
+        <glulx>
+            <serial>261107</serial>
+            <release>1</release>
+            <compiler>Inform Inform 10.1.2 (build )</compiler>
+        </glulx>
+    </story>
+</ifindex>

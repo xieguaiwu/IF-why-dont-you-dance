@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skein rootNode="node-1">
+  <generator>Windows Inform 10.1.2</generator>
+  <item nodeId="node-1">
+    <command xml:space="preserve">Why don't you dance</command>
+    <result xml:space="preserve">Why don't you dance&#x000A;An Interactive Fiction by Ray&#x000A;Release 1 / Serial number 250110 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Kitchen&#x000A;You are standing in the small and  kitchen, try to pour yourself another drink while your hands are shivering. &#x000A;&#x000A;Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture. &#x000A;&#x000A;You splash some of the wine. That doesn't matter. &#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up. Just wait. Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) and Ray here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-77"/>
+      <child nodeId="node-2"/>
+      <child nodeId="node-6"/>
+      <child nodeId="node-10"/>
+      <child nodeId="node-14"/>
+      <child nodeId="node-15"/>
+      <child nodeId="node-16"/>
+      <child nodeId="node-17"/>
+      <child nodeId="node-18"/>
+      <child nodeId="node-36"/>
+      <child nodeId="node-37"/>
+      <child nodeId="node-38"/>
+      <child nodeId="node-41"/>
+      <child nodeId="node-44"/>
+      <child nodeId="node-45"/>
+      <child nodeId="node-74"/>
+      <child nodeId="node-49"/>
+      <child nodeId="node-57"/>
+      <child nodeId="node-59"/>
+      <child nodeId="node-71"/>
+      <child nodeId="node-65"/>
+      <child nodeId="node-67"/>
+    </children>
+  </item>
+  <item nodeId="node-77">
+    <command xml:space="preserve">ask ray for coat</command>
+    <result xml:space="preserve">Ray:"fuck off pervert, here you go."&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-78"/>
+    </children>
+  </item>
+  <item nodeId="node-78">
+    <command xml:space="preserve">x ray</command>
+    <result xml:space="preserve">She is such an ugly woman that you can't stand her for one more second.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-2">
+    <command xml:space="preserve">close window</command>
+    <result xml:space="preserve">You close the window. The kitchen is like a can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-3"/>
+    </children>
+  </item>
+  <item nodeId="node-3">
+    <command xml:space="preserve">drink bottle</command>
+    <result xml:space="preserve">There's nothing suitable to drink here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-4"/>
+    </children>
+  </item>
+  <item nodeId="node-4">
+    <command xml:space="preserve">eat</command>
+    <result xml:space="preserve">What do you want to eat?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-5"/>
+    </children>
+  </item>
+  <item nodeId="node-5">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-6">
+    <command xml:space="preserve">drink bottle</command>
+    <result xml:space="preserve">There's nothing suitable to drink here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-7"/>
+    </children>
+  </item>
+  <item nodeId="node-7">
+    <command xml:space="preserve">drink wine</command>
+    <result xml:space="preserve">There's nothing suitable to drink here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-8"/>
+    </children>
+  </item>
+  <item nodeId="node-8">
+    <command xml:space="preserve">drink a bottle of wine</command>
+    <result xml:space="preserve">There's nothing suitable to drink here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-9"/>
+    </children>
+  </item>
+  <item nodeId="node-9">
+    <command xml:space="preserve">drink</command>
+    <result xml:space="preserve">(the desk)&#x000A;There's nothing suitable to drink here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-10">
+    <command xml:space="preserve">drink wine</command>
+    <result xml:space="preserve">There's nothing suitable to drink here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-11"/>
+    </children>
+  </item>
+  <item nodeId="node-11">
+    <command xml:space="preserve">take bottle</command>
+    <result xml:space="preserve">Taken.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-12"/>
+    </children>
+  </item>
+  <item nodeId="node-12">
+    <command xml:space="preserve">drink bottle</command>
+    <result xml:space="preserve">There's nothing suitable to drink here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-13"/>
+    </children>
+  </item>
+  <item nodeId="node-13">
+    <command xml:space="preserve">drink wine</command>
+    <result xml:space="preserve">There's nothing suitable to drink here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-14">
+    <command xml:space="preserve">eat a bottle</command>
+    <result xml:space="preserve">(first taking the bottle of whisky)&#x000A;You eat the bottle of whisky. Not bad.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-15">
+    <command xml:space="preserve">examine me</command>
+    <result xml:space="preserve">Everything around you isn't real, and you don't know what else to do except waiting. You are a total faliure.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-16">
+    <command xml:space="preserve">get on table</command>
+    <result xml:space="preserve">You get onto the desk.&#x000A;&#x000A;On the desk you can see a bottle of wine and a glass.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-17">
+    <command xml:space="preserve">get on the table</command>
+    <result xml:space="preserve">That's not something you can enter.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-18">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Kitchen&#x000A;You are standing in the small and  kitchen, try to pour yourself another drink while your hands are shivering. You are trying to sell some old furniture. &#x000A;&#x000A;Some of the wine is still remaining on the floor. &#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up. Just wait. Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) and Ray here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-19"/>
+      <child nodeId="node-34"/>
+    </children>
+  </item>
+  <item nodeId="node-19">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Kitchen&#x000A;You are standing in the small and  kitchen, try to pour yourself another drink while your hands are shivering. &#x000A;&#x000A;Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture. &#x000A;&#x000A;You splash some of the wine. That doesn't matter. &#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up. Just wait. Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-20"/>
+    </children>
+  </item>
+  <item nodeId="node-20">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Kitchen&#x000A;You are standing in the small and  kitchen, try to pour yourself another drink while your hands are shivering. &#x000A;&#x000A;Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture. &#x000A;&#x000A;You splash some of the wine. That doesn't matter. &#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up. Just wait. Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-21"/>
+    </children>
+  </item>
+  <item nodeId="node-21">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Kitchen&#x000A;You are standing in the small and  kitchen, try to pour yourself another drink while your hands are shivering. &#x000A;&#x000A;Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture. &#x000A;&#x000A;You splash some of the wine. That doesn't matter. &#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up. Just wait. Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-22"/>
+    </children>
+  </item>
+  <item nodeId="node-22">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-23"/>
+    </children>
+  </item>
+  <item nodeId="node-23">
+    <command xml:space="preserve">ll</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-24"/>
+    </children>
+  </item>
+  <item nodeId="node-24">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Kitchen&#x000A;You are standing in the small and  kitchen, try to pour yourself another drink while your hands are shivering. &#x000A;&#x000A;Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture. &#x000A;&#x000A;You splash some of the wine. That doesn't matter. &#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up. Just wait. Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-25"/>
+    </children>
+  </item>
+  <item nodeId="node-25">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-26"/>
+    </children>
+  </item>
+  <item nodeId="node-26">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-27"/>
+    </children>
+  </item>
+  <item nodeId="node-27">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-28"/>
+    </children>
+  </item>
+  <item nodeId="node-28">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-29"/>
+    </children>
+  </item>
+  <item nodeId="node-29">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-30"/>
+    </children>
+  </item>
+  <item nodeId="node-30">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-31"/>
+    </children>
+  </item>
+  <item nodeId="node-31">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-32"/>
+    </children>
+  </item>
+  <item nodeId="node-32">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-33"/>
+    </children>
+  </item>
+  <item nodeId="node-33">
+    <command xml:space="preserve">fuck</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-34">
+    <command xml:space="preserve">take all</command>
+    <result xml:space="preserve">bottle of whisky: Taken.&#x000A;glass: Taken.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-35"/>
+    </children>
+  </item>
+  <item nodeId="node-35">
+    <command xml:space="preserve">take desk</command>
+    <result xml:space="preserve">That's fixed in place.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-36">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Kitchen&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-37">
+    <command xml:space="preserve">look at the desk</command>
+    <result xml:space="preserve">You see nothing special about the desk.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-38">
+    <command xml:space="preserve">look at the window</command>
+    <result xml:space="preserve">In the front yard, the mattress was stripped and the candy-striped sheets lay beside two pillows on the chiffonier. Except for that, things looked much the way they had in the bedroom - nightstand and reading lamp on his side of the bed, nightstand and reading lamp on her side.&#x000A;&#x000A;Her side, her side.&#x000A;&#x000A;look at the whisky in glass, like an amber. Time seems to be a illusion, or a trap. Blood runs in fingers. When will it end?&#x000A;&#x000A;Why don't you have another drink? &#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-39"/>
+    </children>
+  </item>
+  <item nodeId="node-39">
+    <command xml:space="preserve">take the window</command>
+    <result xml:space="preserve">I don't suppose the window would care for that.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-40"/>
+    </children>
+  </item>
+  <item nodeId="node-40">
+    <command xml:space="preserve">hit window</command>
+    <result xml:space="preserve">Violence isn't the answer to this one.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-41">
+    <command xml:space="preserve">open window</command>
+    <result xml:space="preserve">You open the window. Cold air flows in.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-42"/>
+    </children>
+  </item>
+  <item nodeId="node-42">
+    <command xml:space="preserve">close window</command>
+    <result xml:space="preserve">He isn't something you can close.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-43"/>
+    </children>
+  </item>
+  <item nodeId="node-43">
+    <command xml:space="preserve">take window</command>
+    <result xml:space="preserve">Taken.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-44">
+    <command xml:space="preserve">take desk</command>
+    <result xml:space="preserve">You don't have the strength to do that. You don't have any strength to do anything now.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-45">
+    <command xml:space="preserve">take window</command>
+    <result xml:space="preserve">That's hardly portable.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-46"/>
+    </children>
+  </item>
+  <item nodeId="node-46">
+    <command xml:space="preserve">open window</command>
+    <result xml:space="preserve">You open the window. Cold air flows in.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-47"/>
+    </children>
+  </item>
+  <item nodeId="node-47">
+    <command xml:space="preserve">close window</command>
+    <result xml:space="preserve">You close the window. The kitchen is like a can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-48"/>
+    </children>
+  </item>
+  <item nodeId="node-48">
+    <command xml:space="preserve">look through the window</command>
+    <result xml:space="preserve">You find nothing of interest.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-74">
+    <command xml:space="preserve">talk to ray</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-75"/>
+    </children>
+  </item>
+  <item nodeId="node-75">
+    <command xml:space="preserve">ask ray</command>
+    <result xml:space="preserve">What do you want to ask Ray for?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-76"/>
+    </children>
+  </item>
+  <item nodeId="node-76">
+    <command xml:space="preserve">her coat</command>
+    <result xml:space="preserve">Ray has better things to do.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-49">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes. the air flows, the world is like a stream. It makes you fell like that you can see the smallest thing.&#x000A;&#x000A;You hear something.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-50"/>
+    </children>
+  </item>
+  <item nodeId="node-50">
+    <command xml:space="preserve">hear</command>
+    <result xml:space="preserve">What do you want to hear?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-51"/>
+    </children>
+  </item>
+  <item nodeId="node-51">
+    <command xml:space="preserve">listen</command>
+    <result xml:space="preserve">You hear the summer breeze, though now is late autumn. Winter is coming.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-52"/>
+    </children>
+  </item>
+  <item nodeId="node-52">
+    <command xml:space="preserve">smell</command>
+    <result xml:space="preserve">Your nose is blocked. Maybe you have a cold.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-53"/>
+    </children>
+  </item>
+  <item nodeId="node-53">
+    <command xml:space="preserve">restard</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-54"/>
+    </children>
+  </item>
+  <item nodeId="node-54">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart?</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-55"/>
+    </children>
+  </item>
+  <item nodeId="node-55">
+    <command xml:space="preserve">y</command>
+    <result xml:space="preserve">Why don't you dance&#x000A;An Interactive Fiction by Ray&#x000A;Release 1 / Serial number 240130 / Inform 7 v10.1.2 / D&#x000A;&#x000A;Kitchen&#x000A;You are standing in the kitchen, try to pour yourself another drink while your hands are shivering.&#x000A;&#x000A; Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture.&#x000A;&#x000A;You splash some of the wine. That doesn't matter.&#x000A;&#x000A;You looked out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up.&#x000A;&#x000A;Just wait . Wait for as long as it can. Wait for nothing, for a coming end.&#x000A;&#x000A;You can see a window and a desk (on which are a bottle of wine and a glass) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-56"/>
+    </children>
+  </item>
+  <item nodeId="node-56">
+    <command xml:space="preserve">take all</command>
+    <result xml:space="preserve">window: Taken.&#x000A;bottle of wine: Taken.&#x000A;glass: Taken.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-57">
+    <command xml:space="preserve">x</command>
+    <result xml:space="preserve">(the desk)&#x000A;On the desk are a bottle of whisky and a glass.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-58"/>
+    </children>
+  </item>
+  <item nodeId="node-58">
+    <command xml:space="preserve">look </command>
+    <result xml:space="preserve">Kitchen&#x000A;You are standing in the kitchen, try to pour yourself another drink while your hands are shivering.&#x000A;&#x000A; Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture.&#x000A;&#x000A;You splash some of the wine. That doesn't matter.&#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up.&#x000A;&#x000A;Just wait . Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-59">
+    <command xml:space="preserve">x me</command>
+    <result xml:space="preserve">Everything around you isn't real, and you don't know what else to do except waiting. You are a total faliure.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-60"/>
+    </children>
+  </item>
+  <item nodeId="node-60">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes. the air flows, the world is like a stream. It makes you fell like that you can see the smallest thing.&#x000A;&#x000A;You hear something.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-61"/>
+    </children>
+  </item>
+  <item nodeId="node-61">
+    <command xml:space="preserve">listen</command>
+    <result xml:space="preserve">You hear the summer breeze, though now is late autumn. Winter is coming.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-62"/>
+    </children>
+  </item>
+  <item nodeId="node-62">
+    <command xml:space="preserve">take all</command>
+    <result xml:space="preserve">bottle of whisky: Taken.&#x000A;glass: Taken.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-63"/>
+    </children>
+  </item>
+  <item nodeId="node-63">
+    <command xml:space="preserve">pour whisky</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-64"/>
+    </children>
+  </item>
+  <item nodeId="node-64">
+    <command xml:space="preserve">pour</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-71">
+    <command xml:space="preserve">x ray</command>
+    <result xml:space="preserve">She is such an ugly woman that you can't stand her for one more second.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-72"/>
+    </children>
+  </item>
+  <item nodeId="node-72">
+    <command xml:space="preserve">take ray</command>
+    <result xml:space="preserve">I don't suppose Ray would care for that.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-73"/>
+    </children>
+  </item>
+  <item nodeId="node-73">
+    <command xml:space="preserve">take coat</command>
+    <result xml:space="preserve">That seems to belong to Ray.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-65">
+    <command xml:space="preserve">x window</command>
+    <result xml:space="preserve">In the front yard, the mattress was stripped and the candy-striped sheets lay beside two pillows on the chiffonier. Except for that, things looked much the way they had in the bedroom - nightstand and reading lamp on his side of the bed, nightstand and reading lamp on her side.&#x000A;&#x000A;Her side, her side.&#x000A;&#x000A;look at the whisky in glass, like an amber. Time seems to be a illusion, or a trap. Blood runs in fingers. When will it end?&#x000A;&#x000A;Why don't you have another drink? &#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-66"/>
+    </children>
+  </item>
+  <item nodeId="node-66">
+    <command xml:space="preserve">x window</command>
+    <result xml:space="preserve">In the front yard, the mattress was stripped and the candy-striped sheets lay beside two pillows on the chiffonier. Except for that, things looked much the way they had in the bedroom - nightstand and reading lamp on his side of the bed, nightstand and reading lamp on her side.&#x000A;&#x000A;Her side, her side.&#x000A;&#x000A;look at the whisky in glass, like an amber. Time seems to be a illusion, or a trap. Blood runs in fingers. When will it end?&#x000A;&#x000A;Why don't you have another drink? &#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-67">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes. the air flows, the world is like a stream. It makes you fell like that you can see the smallest thing.&#x000A;&#x000A;You hear something.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-68"/>
+    </children>
+  </item>
+  <item nodeId="node-68">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Kitchen&#x000A;You are standing in the small and  kitchen, try to pour yourself another drink while your hands are shivering. &#x000A;&#x000A;Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture. &#x000A;&#x000A;You splash some of the wine. That doesn't matter. &#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up. Just wait. Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-69"/>
+    </children>
+  </item>
+  <item nodeId="node-69">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Kitchen&#x000A;You are standing in the small and  kitchen, try to pour yourself another drink while your hands are shivering. &#x000A;&#x000A;Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture. &#x000A;&#x000A;You splash some of the wine. That doesn't matter. &#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up. Just wait. Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-70"/>
+    </children>
+  </item>
+  <item nodeId="node-70">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Kitchen&#x000A;You are standing in the small and  kitchen, try to pour yourself another drink while your hands are shivering. &#x000A;&#x000A;Is it because the pain or is it just a kind of performance?  They say you can only show your real self when acting like another one - now this new role is a middle-aged divorced man who is living in a crumbling house, trying to sell some old furniture. &#x000A;&#x000A;You splash some of the wine. That doesn't matter. &#x000A;&#x000A;You look out of the kitchen window with blurry eyes, the bedroom suite in the front yard shows up. Just wait. Wait for as long as it can. Wait for nothing, wait for a coming end.&#x000A;&#x000A;You can see a desk (on which are a bottle of whisky and a glass) here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+</Skein>
