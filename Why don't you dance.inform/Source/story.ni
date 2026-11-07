@@ -20,6 +20,13 @@ Part 1 - The clock of the story
 
 The act is a number variable. The act is 1.
 
+[ Each act has a clock. The player is never told a number; the prose thickens
+  instead. If the clock runs out the act turns over on its own, and whatever
+  was left undone is settled by the forced-advance rules below, so no act can
+  ever begin in an unwinnable state. ]
+Turns_left is a number variable. Turns_left is 20.
+Act_clock_visible is a truth state variable. Act_clock_visible is false.
+
 DrapsDown is a truth state variable. DrapsDown is false.
 
 Drams is a number variable. Drams is 0.
@@ -846,14 +853,18 @@ Book 2 - Act One, the man
 
 Part 1 - The gate out of Act One
 
-Instead of going to the Sidewalk when the act is 1 and Power is true and Drams is at least 1 and SawBed is true:
+To begin act two:
 	now the act is 2;
+	now Turns_left is 18;
 	move the girl to the Front Yard;
 	move the boy to the Front Yard;
 	move the car to the Front Yard;
 	move the seller to the Sidewalk;
 	now the player is the girl;
 	say "[paragraph break][bold type]Act Two[roman type][line break]The girl, in the front yard, some while later.[paragraph break]You are standing in a yard with a whole house set out on it. The boy has stopped the car at the end of the drive and got out and is standing there with his hands in his pockets, looking at it.[paragraph break][']It must be a yard sale,['] you say to him.[paragraph break][']Let[']s see what they want for the bed,['] you say.[paragraph break][']And for the TV,['] he says.[paragraph break]You get out of the car and begin to look at things.".
+
+Instead of going to the Sidewalk when the act is 1 and Power is true and Drams is at least 1 and SawBed is true:
+	begin act two.
 
 Instead of going to the Sidewalk when the act is 1:
 	say "Not yet. The house is still standing out here in the yard with no current in it and no one looking at it, and you have not had a drink." instead.
@@ -874,7 +885,11 @@ Book 3 - Act Two, the girl
 Part 1 - The gate out of Act Two
 
 Instead of going to the Kitchen when the act is 2 and Kissed is true:
+	begin act three.
+
+To begin act three:
 	now the act is 3;
+	now Turns_left is 18;
 	move the seller to the Sidewalk;
 	move the girl to the Front Yard;
 	move the boy to the Front Yard;
@@ -883,7 +898,7 @@ Instead of going to the Kitchen when the act is 2 and Kissed is true:
 	say "[paragraph break][bold type]Act Three[roman type][line break]The man, coming back.[paragraph break]The boy goes along the front of the house, looking for a bell that works. You follow him as far as the steps.[paragraph break]And then, from away down the street, a man comes along the sidewalk with a sack from the market.".
 
 Instead of going to the Kitchen when the act is 2:
-	say "Not yet. There is a bed here that is forty dollars and nobody has tried it but you." instead.
+	say "Not yet. There is a bed here that is forty dollars and nobody has tried it but you.[if the player is on the bed][paragraph break]You would have to get off it first.[end if]" instead.
 
 Part 2 - Act Two's small business
 
@@ -977,7 +992,11 @@ Book 6 - Act Five, weeks later
 Part 1 - The gate into Act Five
 
 After dancing with the girl:
+	begin act five.
+
+To begin act five:
 	now the act is 5;
+	now Turns_left is 99;
 	now Tellings is 0;
 	move the girl to the Later Kitchen;
 	move the seller to the Later Kitchen;
@@ -995,6 +1014,83 @@ Instead of listening when the act is 5:
 Instead of looking when the act is 5:
 	say "A kitchen that is not yours, in a house that is not yours, with a person in it who has heard this before and is willing to hear it again."
 
+Book 6A - The clock
+
+[ One turn of the clock per player turn. The countdown is never shown as a
+  number; at three remaining the prose starts to hurry, and at zero the act
+  turns over on its own. ]
+
+Every turn:
+	decrease Turns_left by 1;
+	if Turns_left is 2 and the act is not 5:
+		say "[italic type]The light has gone off the yard the way it goes, all at once.[roman type]";
+	otherwise if Turns_left is 1 and the act is not 5:
+		say "[italic type]Somewhere a car goes by and does not stop.[roman type]";
+	otherwise if Turns_left is less than 1:
+		if the act is 5:
+			[ Act Five has no clock: it ends when she stops talking. ]
+			now Turns_left is 99;
+		otherwise:
+			follow the forced advance rule;
+	continue the action.
+
+This is the forced advance rule:
+	if the act is 1:
+		[ Everything Act One was for is settled in the man's favour: the current
+		  is run, the drink is poured, the bed has been looked at. He has had the
+		  afternoon he was going to have. ]
+		if Power is false:
+			now Power is true;
+			say "[paragraph break]You run the cord out across the grass without deciding to, and the television comes on, and the lamp, and the record player, all at once.";
+		if Drams is 0:
+			now Drams is 1;
+			say "[paragraph break]You pour a drink. You do not remember pouring it.";
+		if SawBed is false:
+			now SawBed is true;
+		now Turns_left is 18;
+		begin act two;
+	otherwise if the act is 2:
+		[ The boy gives up on the house and comes back to the bed. She gets what
+		  she was going to get. ]
+		if the boy is not in the Front Yard:
+			move the boy to the Front Yard;
+		if Kissed is false:
+			now BoyOnBed is true;
+			now Kissed is true;
+			say "[paragraph break]He comes back to the bed without being asked and sits down on the edge of it. You put your hand to his face and he does not move away, and that is the whole of it.";
+		now Turns_left is 18;
+		begin act three;
+	otherwise if the act is 3:
+		[ The bargaining closes itself. Nobody is left out of pocket. ]
+		if BedSold is false:
+			now BedSold is true;
+			say "[paragraph break][']Forty,['] she says, and you say forty, and that is the bed gone.";
+		if TVSold is false:
+			now TVSold is true;
+		if CigaretteDropped is false:
+			now CigaretteDropped is true;
+		if CigaretteFound is false:
+			now CigaretteFound is true;
+			move the cigarette to the seller;
+		now Turns_left is 16;
+		if Power is false:
+			now Power is true;
+		say "[paragraph break]Somebody puts a record on. It is not clear who.[paragraph break][bold type]Act Four[roman type][line break]The records, and after.";
+		now the act is 4;
+	otherwise if the act is 4:
+		[ They dance whether or not they were asked. ]
+		if TheyDanced is false:
+			now TheyDanced is true;
+			say "[paragraph break]They are dancing. Nobody asked them to and nobody is going to ask them to stop.";
+		if GirlDanced is false:
+			now GirlDanced is true;
+			now Turns_left is 14;
+			say "[paragraph break]The man turns the record over. The girl says dance with me to the boy and then to you, and when you stand up she comes to you with her arms wide open.";
+		otherwise:
+			now Turns_left is 14;
+			begin act five.
+
+[ The clock is reset only inside the begin-act phrases, which fire once. ]
 Book 7 - Endings
 
 [---------------------------------------------------------------------------]
