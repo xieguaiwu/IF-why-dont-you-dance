@@ -7,7 +7,7 @@ build output; the source of truth is `Why don't you dance.materials/Release/`.
 |---|---|
 | `why-dont-you-dance.gblorb` | Glulx story file. Contains the game, the cover art and the iFiction metadata. |
 | `why-dont-you-dance-cover.jpg` | Cover art, 1200x1200, 441 KB. Use this one for IFDB. |
-| `why-dont-you-dance-cover.png` | Cover art, 1200x1200, 2.1 MB. Archive quality; too large for IFDB. |
+
 
 ## Identification
 
@@ -24,15 +24,15 @@ build output; the source of truth is `Why don't you dance.materials/Release/`.
 The IFID is the stable identifier. Keep it when filing the game anywhere; it is
 what archives use to tell one work from another.
 
-## Why two cover files
+## About the cover
 
-IFDB rejects covers much over 1 MB. The PNG is 2.1 MB and will not upload; the
-JPEG is 441 KB and will. The JPEG is q92 at 4:4:4 chroma, which keeps the type
-edges clean, and measures 43.6 dB PSNR against the PNG, so the difference is not
-visible.
+The cover is a JPEG at 441 KB. IFDB will not take a cover much over 1 MB, so the
+original 2.1 MB PNG could not be uploaded. The JPEG is q92 with 4:4:4 chroma,
+which keeps the type edges clean, and measures 43.6 dB PSNR against the source
+image.
 
-The PNG also carried a full alpha channel it did not need. The JPEG is flattened
-onto black and stripped.
+The same JPEG is the cover embedded in the blorb, so the download and the
+catalogue entry show the same picture.
 
 ## Rebuilding
 

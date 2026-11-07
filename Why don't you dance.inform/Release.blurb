@@ -13,8 +13,8 @@ release to "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.mat
 storyfile leafname "Why Don't You Dance.gblorb"
 storyfile "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.inform/Build/output.ulx" include
 ifiction "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.inform/Metadata.iFiction" include
-cover "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.materials/Cover.png"
-picture 1 "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.materials/Cover.png"
+cover "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.materials/Cover.jpg"
+picture 1 "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.materials/Cover.jpg"
 
 ! Placeholder variables
 
