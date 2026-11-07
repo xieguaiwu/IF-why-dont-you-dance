@@ -119,7 +119,6 @@ Book 3 - The bedroom suite
 Part 1 - The bed
 
 The bed is an enterable supporter in the Front Yard.
-The bed is proper-named.
 The printed name of the bed is "bed".
 Understand "mattress" as the bed.
 Understand "bedroom suite" as the bed.
@@ -814,6 +813,20 @@ Check feeling:
 	otherwise:
 		say "You can hardly do that." instead.
 
+Book 9E - Naming what is not here yet
+
+[ In Act One the visitors have not arrived. If the player names them anyway,
+  the answer should be the man's, not the parser's. ]
+
+Instead of doing something to the girl when the act is 1:
+	say "There is nobody here but you and the yard."
+
+Instead of doing something to the boy when the act is 1:
+	say "There is nobody here but you and the yard."
+
+Instead of doing something to the car when the act is 1:
+	say "The drive is empty. Nobody has stopped."
+
 Book 9D - Credits
 
 Crediting is an action applying to nothing.
@@ -895,6 +908,9 @@ To begin act three:
 	move the boy to the Front Yard;
 	move the sack to the seller;
 	now the player is the seller;
+	if the floor lamp is switched on and CigaretteDropped is false:
+		now CigaretteDropped is true;
+		say "[paragraph break]The lamp is still on from before. You reach to turn it up and it is already up, and it is then that the cigarette drops from your fingers and falls between the cushions of the sofa.";
 	say "[paragraph break][bold type]Act Three[roman type][line break]The man, coming back.[paragraph break]The boy goes along the front of the house, looking for a bell that works. You follow him as far as the steps.[paragraph break]And then, from away down the street, a man comes along the sidewalk with a sack from the market.".
 
 Instead of going to the Kitchen when the act is 2:
@@ -949,9 +965,6 @@ Instead of going to the Sidewalk when the act is 3:
 
 Part 2 - The beats of Act Three
 
-After going to the Front Yard when the act is 3 and the floor lamp is switched on and CigaretteDropped is false:
-	now CigaretteDropped is true;
-	say "You reach over to the floor lamp to turn it up, and it is already on, and it is then that the cigarette drops from your fingers and falls between the cushions.".
 
 Instead of waiting when the act is 3:
 	say "You sit and let the afternoon go. The whiskey is doing what whiskey does, which is not much, and the television is doing what television does, which is also not much."
