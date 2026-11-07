@@ -9,6 +9,10 @@ terms.
 is an original program. So are the build scripts and the test scripts. Those are
 released under the MIT licence in `LICENSE`.
 
+That licence is the standard MIT text, unmodified, so that tools recognise it.
+The limits below are not extra conditions on the licence; they are a statement of
+what the licence reaches, which is the code and not the story.
+
 **The story is not mine to license.** "Why Don't You Dance?" is a short story by
 Raymond Carver, first published in 1981 and collected in *What We Talk About When
 We Talk About Love*. Copyright rests with the Carver estate. This game is an
