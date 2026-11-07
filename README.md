@@ -88,3 +88,8 @@ The Inform 7 source of this adaptation is released under the MIT licence.
 The underlying short story remains the property of the Carver estate. This is a
 non-commercial adaptation: no text from the story is reproduced beyond short
 quotations of dialogue, and the work is not offered for sale.
+
+**The MIT licence covers the code, not the story.** Adapting Carver's characters
+and plot is not something this licence can authorise. See [NOTICE.md](NOTICE.md)
+for what is licensed, what is quoted from the source, and the position on the
+rights in the original.
