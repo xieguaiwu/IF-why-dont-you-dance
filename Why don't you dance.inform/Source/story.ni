@@ -29,7 +29,6 @@ Tellings is a number variable. Tellings is 0.
 Power is a truth state variable. Power is false.
 WaterOn is a truth state variable. WaterOn is false.
 SawBed is a truth state variable. SawBed is false.
-ShoesOff is a truth state variable. ShoesOff is false.
 BoyOnBed is a truth state variable. BoyOnBed is false.
 Kissed is a truth state variable. Kissed is false.
 CigaretteDropped is a truth state variable. CigaretteDropped is false.
@@ -61,9 +60,9 @@ Part 1 - The house and its yard
 The Front Yard is a room.
 The description of the Front Yard is "The whole of the house, set out on the grass. The bedroom suite stands in the middle of it, arranged the way it was arranged indoors, and around it the rest: the buffed aluminum kitchen set on the driveway gravel with its yellow muslin cloth hanging down over the sides, the television on its coffee table with the sofa and the armchair and the floor lamp a few feet away, the desk pushed up against the garage door.
 
-Everything is plugged in and everything works. No different from how it was when it was inside.
+[if Power is true]Everything is plugged in and everything works. No different from how it was when it was inside.[otherwise]The extension cord is still coiled by the garage door, and the plugs on the television and the lamp and the record player end in nothing.
 
-The porch is behind all of it, and the street is out past the end of the drive."
+The porch is behind all of it, and the street is out past the end of the drive.[end if]"
 
 The Kitchen is north of the Front Yard.
 The description of the Kitchen is "Small, and getting smaller. The counters are bare. Whatever was in the cupboards is in a carton somewhere out front, and the cartons are the only furniture left that belongs in here.
@@ -107,10 +106,6 @@ Part 2 - What they carry
 The boy carries a checkbook.
 The description of the checkbook is "A leatherette folder with a pad of checks inside. He holds it to his lips when he thinks."
 
-The sandals are a wearable thing.
-The girl wears the sandals.
-The description of the sandals is "Cheap, thin-soled, the kind you kick off without untying anything."
-
 Book 3 - The bedroom suite
 
 
@@ -129,6 +124,8 @@ After examining the bed when the act is 1 and SawBed is false:
 Part 2 - Around the bed
 
 The chiffonier is a scenery supporter in the Front Yard.
+Understand "dresser" as the chiffonier.
+Understand "chest of drawers" as the chiffonier.
 The printed name of the chiffonier is "chiffonier".
 The description of the chiffonier is "A low dresser with the drawers pulled out and emptied that morning. Two pillows and a folded stack of candy-striped sheets rest on top of it."
 
@@ -179,6 +176,9 @@ The description of the coffee table is "Low, scarred, with a ring on it where a 
 
 The television is a device.
 The television is on the coffee table.
+Understand "tv" as the television.
+Understand "telly" as the television.
+Understand "set" as the television.
 The description of the television is "A big console model, the kind that is furniture as much as appliance. [if Power is true]The screen is full of gray light and moving specks.[otherwise]It is dark and silent.[end if]"
 
 Instead of switching on the television when Power is false:
@@ -193,9 +193,11 @@ Instead of switching off the television:
 	say "You turn the dial past the click. The gray collapses to a dot and then to nothing."
 
 The sofa is an enterable supporter in the Front Yard.
+Understand "couch" as the sofa.
 The description of the sofa is "Upholstered, faded along the arms, the cushions gone soft in the middle where people sat. There is a gap between two of the cushions, deep enough to lose things in."
 
 The armchair is scenery in the Front Yard.
+Understand "chair" as the armchair.
 The description of the armchair is "It matches the sofa. It has been moved out here with the sofa because the two of them were bought on the same day and there is no separating them now."
 
 The floor lamp is a device in the Front Yard.
@@ -295,7 +297,7 @@ Book 6 - The market sack
 
 The sack is a container.
 The sack is nowhere.
-The description of the sack is "Paper, gone soft at the bottom from the weight. Sandwiches, beer, and a bottle of whiskey, and the bottle is already open because you opened it in the car."
+The description of the sack is "Paper, gone soft at the bottom from the weight. Sandwiches, beer, and a small bottle of whiskey with the seal still on it."
 
 The beer is a thing in the sack.
 The description of the beer is "Two cans, cold enough still to sweat."
@@ -317,11 +319,25 @@ After opening the bottle of whiskey:
 
 Book 7 - The car
 
-The car is scenery in the Front Yard.
+The car is scenery.
+The car is nowhere.
 The description of the car is "Parked in the driveway at an angle, the way you park when you are only going to be a minute. The keys are still in it."
 
 The car is proper-named.
 The steering wheel is part of the car.
+
+[ The car is scenery, so it cannot be entered. Rather than leave the player
+  with the bare parser complaint, answer in the voice of whoever is looking. ]
+Instead of entering the car:
+	if the act is 2:
+		say "You have just got out of it. The keys are still in the ignition and the door is still open, and there is nothing in there for you now.";
+	otherwise if the act is 3 or the act is 4:
+		say "It is their car. You are not going to get into it, and they are not going to ask you to.";
+	otherwise:
+		say "You are not going anywhere in it. That is the whole of the afternoon, right there."
+
+Instead of entering the car when the act is 2:
+	say "You have just got out of it. The keys are still in the ignition and the door is still open, and there is nothing in there for you now."
 The description of the steering wheel is "Worn smooth at ten and two."
 
 Book 7A - The wind
@@ -539,33 +555,13 @@ Carry out pricing:
 
 Book 5 - Company
 
-Insisting is an action applying to nothing.
-Understand "insist" as insisting.
-Understand "try it" as insisting.
-Understand "come here" as insisting.
-Understand "persuade him" as insisting.
-
-Check insisting:
-	if the act is not 2:
-		say "There is no one here to insist to." instead;
-	if BoyOnBed is true:
-		say "He is already lying down." instead.
-
-Carry out insisting:
-	if Kissed is true:
-		say "There is nothing left to insist on." instead;
-	if the boy is not in the location:
-		move the boy to the location;
-	now BoyOnBed is true;
-	say "You bounce on the mattress, twice, hard, and hold out your hand.[paragraph break][']Try it first,['] you say.[paragraph break]He comes over. He sits. Then he lies back and puts the pillow under his head, the way a man lies down when he is already thinking about getting up.[paragraph break][']How does it feel?['] you say.[paragraph break][']It feels firm,['] he says."
-
 The block kissing rule is not listed in any rulebook.
 
 Check kissing:
 	if the noun is not the boy:
 		say "There is no one else here to kiss." instead;
 	if BoyOnBed is false:
-		say "He is not close enough. He is standing by the television with his hands in his pockets." instead;
+		say "He is not close enough. He is standing off at the edge of it with his hands in his pockets. You would have to get him onto the bed first, and the bed is right here." instead;
 	if Kissed is true:
 		say "You have already done that." instead.
 
@@ -691,6 +687,21 @@ Understand "lie back" as lying down.
 Carry out lying down:
 	try entering the bed.
 
+Lying on is an action applying to one thing.
+Understand "lie on [something]" as lying on.
+Understand "lie down on [something]" as lying on.
+Understand "lie in [something]" as lying on.
+Understand "lie back on [something]" as lying on.
+
+Check lying on:
+	if the noun is the player:
+		say "You are not going to lie down in the middle of this." instead;
+	if the noun is not enterable:
+		say "[The noun] is not something you can lie on." instead;
+
+Carry out lying on:
+	try entering the noun.
+
 Peering is an action applying to one thing.
 Understand "look through [something]" as peering.
 Understand "look out of [something]" as peering.
@@ -812,7 +823,7 @@ Instead of examining the player:
 	if the act is 1 or the act is 3 or the act is 4:
 		say "A middle-aged man, pale, his hands not entirely steady. He is wearing the shirt he slept in.[if the player carries something]He is carrying [a list of things carried by the player].[end if][if Drunk is 1][paragraph break]The whiskey has got as far as your hands and stopped there.[otherwise if Drunk is at least 2][paragraph break]You have had enough of it that the yard looks like a photograph of the yard.[end if]";
 	otherwise if the act is 2:
-		say "A girl in a sundress and thin sandals[if ShoesOff is true], barefoot now[end if]. She is furnishing a little apartment, and this is the best afternoon she has had in a while, and she does not know it yet.";
+		say "A girl in a sundress, her shoes off now, sitting on the edge of a bed in somebody else[']s front yard. She is furnishing a little apartment, and this is the best afternoon she has had in a while, and she does not know it yet.";
 	otherwise:
 		say "A girl in a sundress, older now by some weeks, or it only looks that way, holding a drink she is not drinking."
 
@@ -890,15 +901,14 @@ After taking the candy-striped sheets when the act is 2:
 	say "You pick up the folded candy-striped sheets and they come open in your hands, and you fold them again, badly, and put them back on the dresser. The bed looks worse than it did.";
 	move the candy-striped sheets to the chiffonier.
 
-After taking off the sandals when the act is 2:
-	now ShoesOff is true;
-	say "You push them off with your toes and they fall in the grass beside the bed, one of them on its side."
-
-After entering the bed when the act is 2 and ShoesOff is true:
-	say "You lie back. The mattress gives under you and holds.[paragraph break]You think you can see a star. It is not dark enough yet for a star, but you think you can see one, and that is the same thing as seeing one.[paragraph break][']Come here, Jack. Try this bed. Bring one of those pillows,['] you say.".
-
+[ The source does this in one motion: she pushes off her shoes and lies back,
+  and the star follows immediately. No separate verb, and the boy comes over
+  on his own, the way he does in the story. ]
 After entering the bed when the act is 2:
-	say "You sit down on the edge of it. The mattress gives and holds. It is a good bed, and it is forty dollars, and you are going to have it in a little apartment with a window that faces something."
+	say "You sit down on the edge of it, then push off your shoes with your toes and lie back. The mattress gives under you and holds.[paragraph break]You think you can see a star. It is not dark enough yet for a star, but you think you can see one, and that is the same thing as seeing one.[paragraph break][']Come here, Jack. Try this bed. Bring one of those pillows,['] you say.[paragraph break]He looks around. The house is dark.[paragraph break][']I feel funny,['] he says. [']Better see if anybody[']s home.['][paragraph break]You bounce on the mattress, twice, hard.[paragraph break][']Try it first,['] you say.[paragraph break]He comes over. He sits. Then he lies back and puts the pillow under his head, the way a man lies down when he is already thinking about getting up.[paragraph break][']How does it feel?['] you say.[paragraph break][']It feels firm,['] he says.[paragraph break]He is close enough to touch. You feel like kissing him.";
+	if the boy is not in the location:
+		move the boy to the location;
+	now BoyOnBed is true.
 
 Instead of touching the muslin cloth when the act is 2:
 	say "You put your hand out and touch the cloth. It is yellow and much too big for the table it is on, and it hangs down over the sides and pools in the gravel, and somebody chose it carefully and then left it out here."
@@ -909,7 +919,7 @@ Instead of examining the silverware box when the act is 2:
 Instead of switching on the television when the act is 2:
 	say "It is already going. It has been going the whole time, and there is nobody watching it, and you watch it for a while yourself."
 
-Before examining the boy when the act is 2:
+Instead of examining the boy when the act is 2:
 	say "He has his hands in his pockets and he is looking at the house, not at the furniture. He is the kind of boy who checks whether anybody is home before he sits down."
 
 Book 4 - Act Three, the man returns
@@ -990,16 +1000,16 @@ Book 7 - Endings
 [---------------------------------------------------------------------------]
 Volume 5 - Tests
 
-Test me with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / switch on floor lamp / want 50 dollars for bed / want 40 dollars for bed / want 25 dollars for television / want 15 dollars for television / s / x muslin cloth / take off sandals / lie down / insist / kiss boy / n / n / n / s / peel second glass / peel third glass / pour whiskey into second glass / pour whiskey into third glass / switch on spigot / add water to third glass / search sofa / switch on record player / play second disc / invite boy to dance / invite girl to dance / dance with girl / tell / tell / tell / tell / quit trying".
+Test me with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / switch on floor lamp / want 50 dollars for bed / want 40 dollars for bed / want 25 dollars for television / want 15 dollars for television / s / x muslin cloth / lie down / kiss boy / n / n / n / s / peel second glass / peel third glass / pour whiskey into second glass / pour whiskey into third glass / switch on spigot / add water to third glass / search sofa / switch on record player / play second disc / invite boy to dance / invite girl to dance / dance with girl / tell / tell / tell / tell / quit trying".
 
 Test act1 with "look / x window / x bottle / open bottle / s / x cord / x carton / x bed / peel first glass / listen / smell / x me / s".
 
-Test act2 with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / want 40 dollars for bed / s / x me / x girl / x boy / take off sandals / lie down / insist / kiss boy".
+Test act2 with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / want 40 dollars for bed / s / x me / x girl / x boy / lie down / kiss boy".
 
-Test act3 with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / want 40 dollars for bed / s / lie down / insist / kiss boy / n / n / n / s / x girl / x boy / peel second glass / switch on spigot / search sofa".
+Test act3 with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / want 40 dollars for bed / s / lie down / kiss boy / n / n / n / s / x girl / x boy / peel second glass / switch on spigot / search sofa".
 
-Test act4 with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / want 40 dollars for bed / s / lie down / insist / kiss boy / n / n / n / s / switch on record player / play first disc / invite boy to dance / invite girl to dance / dance with girl / x me".
+Test act4 with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / want 40 dollars for bed / s / lie down / kiss boy / n / n / n / s / switch on record player / play first disc / invite boy to dance / invite girl to dance / dance with girl / x me".
 
-Test act5 with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / want 40 dollars for bed / s / lie down / insist / kiss boy / n / n / n / s / switch on record player / play first disc / invite boy to dance / invite girl to dance / dance with girl / tell / tell / tell / tell / quit trying".
+Test act5 with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / want 40 dollars for bed / s / lie down / kiss boy / n / n / n / s / switch on record player / play first disc / invite boy to dance / invite girl to dance / dance with girl / tell / tell / tell / tell / quit trying".
 
 Test short with "quit trying / tell / s / x bed / s".
