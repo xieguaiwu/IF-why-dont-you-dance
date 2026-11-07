@@ -13,8 +13,8 @@ release to "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.mat
 storyfile leafname "Why Don't You Dance.gblorb"
 storyfile "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.inform/Build/output.ulx" include
 ifiction "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.inform/Metadata.iFiction" include
-cover "/home/xieguiawu/src/inform-tools/inform/inform7/Internal/Miscellany/DefaultCover.jpg"
-picture 1 "/home/xieguiawu/src/inform-tools/inform/inform7/Internal/Miscellany/DefaultCover.jpg"
+cover "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.materials/Cover.png"
+picture 1 "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.materials/Cover.png"
 
 ! Placeholder variables
 
@@ -27,7 +27,7 @@ placeholder [BLURB] = "A house is emptied onto a lawn. Two people stop to look. 
 
 ! Other material to release
 
-status alternative ||Using 'Release along with cover art', to provide something more distinctive than the default artwork above&nbsp;<a href=inform:/doc401.html><img border=0 src=inform:/doc_images/help.png></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line9"><img border=0 src=inform:/doc_images/Reveal.png></a>||
 status alternative ||Using 'Release along with a website'&nbsp;<a href=inform:/doc403.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with an interpreter', for in-browser play on your website&nbsp;<a href=inform:/doc404.html><img border=0 src=inform:/doc_images/help.png></a>||
 status alternative ||Using 'Release along with a file of "Such-and-Such" called "whatever.pdf"', perhaps to add a manual, or a welcoming note&nbsp;<a href=inform:/doc399.html><img border=0 src=inform:/doc_images/help.png></a>||

@@ -5,6 +5,8 @@ Use no scoring.
 Use the serial comma.
 
 The story headline is "An adaptation of a story by Raymond Carver".
+
+Release along with cover art ("Cover.png").
 The story genre is "Literary".
 The story description is "A house is emptied onto a lawn. Two people stop to look. Five acts, two points of view, and the thing that cannot be said."
 
@@ -18,7 +20,10 @@ Part 1 - The clock of the story
 
 The act is a number variable. The act is 1.
 
+DrapsDown is a truth state variable. DrapsDown is false.
+
 Drams is a number variable. Drams is 0.
+Drunk is a number variable. Drunk is 0.
 Tellings is a number variable. Tellings is 0.
 
 Power is a truth state variable. Power is false.
@@ -63,7 +68,7 @@ The porch is behind all of it, and the street is out past the end of the drive."
 The Kitchen is north of the Front Yard.
 The description of the Kitchen is "Small, and getting smaller. The counters are bare. Whatever was in the cupboards is in a carton somewhere out front, and the cartons are the only furniture left that belongs in here.
 
-Through the window over the sink you can see the bedroom suite standing out in the yard, made up as if someone still slept in it."
+Through the window over the sink you can see the bedroom suite standing out in the yard, made up as if someone still slept in it.[if DrapsDown is false][paragraph break]It is early spring and the house has no heat in it. Your hands are not steady. You could not say whether that is the drink or the cold, and it does not matter which."
 
 The Sidewalk is south of the Front Yard.
 The description of the Sidewalk is "Cracked concrete, a strip of grass, a street. Houses on the other side with their lights coming on, one after another, all the way down."
@@ -123,8 +128,7 @@ After examining the bed when the act is 1 and SawBed is false:
 
 Part 2 - Around the bed
 
-The chiffonier is a supporter in the Front Yard.
-The chiffonier is scenery.
+The chiffonier is a scenery supporter in the Front Yard.
 The printed name of the chiffonier is "chiffonier".
 The description of the chiffonier is "A low dresser with the drawers pulled out and emptied that morning. Two pillows and a folded stack of candy-striped sheets rest on top of it."
 
@@ -141,6 +145,15 @@ The description of the portable heater is "A squat box with a grille and a switc
 
 The rattan chair is scenery in the Front Yard.
 The description of the rattan chair is "A decorator pillow is propped against its back. The pillow has a bird on it."
+
+Book 3A - The sheets and the pillows
+
+The candy-striped sheets are a plural-named thing on the chiffonier.
+The description of the candy-striped sheets is "Folded, and folded well, the way somebody folds things who is not coming back to them. Candy-striped.[if DrapsDown is true][paragraph break]They have been opened and folded again, worse than before.[end if]"
+
+The pillows are a plural-named thing on the chiffonier.
+The description of the pillows is "Two of them, still in their cases. One has the shape of a head in it."
+
 
 Book 4 - The driveway
 
@@ -303,6 +316,14 @@ The car is proper-named.
 The steering wheel is part of the car.
 The description of the steering wheel is "Worn smooth at ten and two."
 
+Book 7A - The wind
+
+[ A backdrop is one object visible from several rooms at once. Scenery cannot
+  be in more than one room; a backdrop can. ]
+The wind is a backdrop.
+The wind is in the Kitchen, the Front Yard, the Sidewalk and the Later Kitchen.
+The description of the wind is "It comes across the yard without stopping, the way wind does when there is nothing left in its way. [if DrapsDown is false]It is early spring and the cold in it has not finished with anybody yet.[otherwise]It has been going all afternoon. It goes through the shirt and does not find much.[end if]"
+
 Book 8 - The sink
 
 The sink is scenery in the Kitchen.
@@ -391,7 +412,15 @@ Instead of drinking the bottle of whiskey:
 	if the bottle of whiskey is closed:
 		say "The bottle is sealed." instead;
 	increase Drams by 1;
-	say "You drink from the bottle. That is a thing you would not have done a year ago, and it does not feel like anything now."
+	if Drunk is 0:
+		increase Drunk by 1;
+		say "You drink from the bottle. That is a thing you would not have done a year ago, and it does not feel like anything now.";
+	otherwise if Drunk is 1:
+		increase Drunk by 1;
+		say "You drink again. There was a gentle influx of sunlight. The wind still howls, yet it is getting muffled.";
+	otherwise:
+		increase Drunk by 1;
+		say "You drink again. The light has gone the colour of the inside of a glass, and the wind is somewhere behind it, and none of it is doing what it used to do."
 
 Part 3 - Water
 
@@ -718,14 +747,45 @@ Check going when the room gone to is nothing:
 			say "The neighbor[']s yard, and the neighbor[']s window, and the neighbor watching. Let them watch from there.";
 	stop the action.
 
-BOOK 9C - Special Verb
+Book 9C - Special verbs
 
+Crying is an action applying to nothing.
+Understand "cry" as crying.
+Understand "weep" as crying.
+Understand "sad" as crying.
+
+Report crying:
+	say "You do not cry. There is nothing coming up in you that would turn into it. You stand there with your face doing nothing at all."
+
+[ "jump" is a Standard Rules action that already answers "You jump on the spot."
+  Rather than fight it, take it over: this is the same action, with our voice. ]
+Instead of jumping:
+	say "You do not. There was a time you would have. Your body has opinions now and they are all against it."
+
+Understand "hop" as jumping.
+Understand "leap" as jumping.
+Understand "prance" as jumping.
+
+[ The Standard Rules alias the command "feel" to "touch", which would swallow
+  this grammar. Detaching it first is what makes the verb available. ]
+Understand the command "feel" as something new.
+
+Feeling is an action applying to one thing.
+Understand "feel [something]" as feeling.
+
+Check feeling:
+	if the noun is the player:
+		say "You put a hand to your own face. Cold, and the bones are where you left them." instead;
+	otherwise if the noun is the wind:
+		say "You put a hand out into it. The wind goes past your fingers and does not stop for them." instead;
+	otherwise:
+		say "You can hardly do that." instead.
 
 Book 10 - Being someone
 
 Instead of examining the player:
 	if the act is 1 or the act is 3 or the act is 4:
-		say "A middle-aged man, pale, his hands not entirely steady. He is wearing the shirt he slept in.[if the player carries something]He is carrying [a list of things carried by the player].[end if]";
+		say "A middle-aged man, pale, his hands not entirely steady. He is wearing the shirt he slept in.[if the player carries something]He is carrying [a list of things carried by the player].[end if][if Drunk is 1][paragraph break]The whiskey has got as far as your hands and stopped there.[otherwise if Drunk is at least 2][paragraph break]You have had enough of it that the yard looks like a photograph of the yard.[end if]";
 	otherwise if the act is 2:
 		say "A girl in a sundress and thin sandals[if ShoesOff is true], barefoot now[end if]. She is furnishing a little apartment, and this is the best afternoon she has had in a while, and she does not know it yet.";
 	otherwise:
@@ -799,6 +859,11 @@ Instead of listening when the act is 2:
 
 Instead of smelling when the act is 2:
 	say "Cut grass, gasoline, dust. Under all of it, faintly, whiskey."
+
+After taking the candy-striped sheets when the act is 2:
+	now DrapsDown is true;
+	say "You pick up the folded candy-striped sheets and they come open in your hands, and you fold them again, badly, and put them back on the dresser. The bed looks worse than it did.";
+	move the candy-striped sheets to the chiffonier.
 
 After taking off the sandals when the act is 2:
 	now ShoesOff is true;
