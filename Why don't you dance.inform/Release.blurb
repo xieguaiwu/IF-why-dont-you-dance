@@ -22,8 +22,8 @@ placeholder [IFID] = "1395612E-70A4-4430-979D-838BD31BF28C"
 placeholder [RELEASE] = "1"
 placeholder [YEAR] = "2026"
 placeholder [TITLE] = "Why Don't You Dance"
-placeholder [AUTHOR] = "Raymond Carver"
-placeholder [BLURB] = "A house is emptied onto a lawn. Two people stop to look. Five acts, two points of view, and the thing that cannot be said."
+placeholder [AUTHOR] = "Lucian Frost"
+placeholder [BLURB] = "An interactive adaptation of Raymond Carver's short story. A house is emptied onto a lawn. Two people stop to look. Five acts, two points of view, and the thing that cannot be said."
 
 ! Other material to release
 

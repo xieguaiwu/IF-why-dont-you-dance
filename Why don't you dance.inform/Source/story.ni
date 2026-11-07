@@ -1,14 +1,14 @@
-"Why Don't You Dance" by Raymond Carver
+"Why Don't You Dance" by Lucian Frost
 
 Use American dialect.
 Use no scoring.
 Use the serial comma.
 
-The story headline is "An adaptation of a story by Raymond Carver".
+The story headline is "after Raymond Carver".
 
 Release along with cover art ("Cover.png").
 The story genre is "Literary".
-The story description is "A house is emptied onto a lawn. Two people stop to look. Five acts, two points of view, and the thing that cannot be said."
+The story description is "An interactive adaptation of Raymond Carver's short story. A house is emptied onto a lawn. Two people stop to look. Five acts, two points of view, and the thing that cannot be said."
 
 
 [---------------------------------------------------------------------------]
@@ -304,8 +304,16 @@ The sandwiches are a plural-named thing in the sack.
 The description of the sandwiches is "Wrapped in wax paper. You are not hungry and you bought them anyway."
 
 The bottle of whiskey is an openable container in the Kitchen.
-The bottle of whiskey is open.
-The description of the bottle of whiskey is "A small bottle, bought yesterday. [if Drams is greater than 0]There is less in it than there was.[otherwise]It is nearly full.[end if]"
+The bottle of whiskey is closed.
+Understand "whisky" as the bottle of whiskey.
+Understand "scotch" as the bottle of whiskey.
+Understand "bourbon" as the bottle of whiskey.
+Understand "liquor" as the bottle of whiskey.
+Understand "bottle" as the bottle of whiskey.
+The description of the bottle of whiskey is "A small bottle, bought yesterday. [if the bottle of whiskey is closed]The seal is unbroken.[otherwise if Drams is greater than 0]There is less in it than there was.[otherwise]It is open and nearly full.[end if]"
+
+After opening the bottle of whiskey:
+	say "You break the seal with your thumb. The smell of it comes up out of the neck and stays in the air.";
 
 Book 7 - The car
 
@@ -388,7 +396,7 @@ Carry out pouring it into:
 	now the second noun is whiskied;
 	increase Drams by 1;
 	if Drams is 1:
-		say "You break the seal and pour. The whiskey goes into the glass and sits there, amber, doing nothing.";
+		say "You pour. The whiskey goes into the glass and sits there, amber, doing nothing.";
 	otherwise if Drams is 2 and the act is 3:
 		say "You pour again. The girl holds out her glass and you fill it.[paragraph break][']Thank you,['] she says. [']You[']re very nice,['] she says.[paragraph break][']It goes to your head,['] the boy says. [']I[']m getting it in the head.['] He holds up his glass and jiggles it.";
 	otherwise:
@@ -755,7 +763,14 @@ Understand "weep" as crying.
 Understand "sad" as crying.
 
 Report crying:
-	say "You do not cry. There is nothing coming up in you that would turn into it. You stand there with your face doing nothing at all."
+	if the act is 1:
+		say "You do not cry. The last time was in a car, years ago, and you could not say now what it was about. The yard is very bright. You stand in the middle of it with your face doing nothing at all.";
+	otherwise if the act is 2:
+		say "You are not going to cry in somebody else[']s front yard. There is a boy here and a bed for forty dollars and a whole afternoon still to get through, and none of that is a reason.";
+	otherwise if the act is 3 or the act is 4:
+		say "Not in front of them. There is a girl sitting on your bed and a boy with a checkbook open, and whatever this is, it is not going to happen here.";
+	otherwise:
+		say "You do not cry. You get as far as the record player and the crappy records, and then your throat does something, and you pick up your drink instead."
 
 [ "jump" is a Standard Rules action that already answers "You jump on the spot."
   Rather than fight it, take it over: this is the same action, with our voice. ]
@@ -780,6 +795,16 @@ Check feeling:
 		say "You put a hand out into it. The wind goes past your fingers and does not stop for them." instead;
 	otherwise:
 		say "You can hardly do that." instead.
+
+Book 9D - Credits
+
+Crediting is an action applying to nothing.
+Understand "credits" as crediting.
+Understand "about" as crediting.
+Understand "author" as crediting.
+
+Carry out crediting:
+	say "[bold type]Why Don[']t You Dance[roman type][paragraph break]An interactive adaptation by Lucian Frost, after the short story by Raymond Carver, from [italic type]What We Talk About When We Talk About Love[roman type] (1981).[paragraph break]Written in Inform 7. Five acts, two points of view, and the thing that cannot be said."
 
 Book 10 - Being someone
 

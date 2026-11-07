@@ -1,7 +1,8 @@
 # Why Don't You Dance
 
-An interactive fiction adaptation of Raymond Carver's 1981 short story of the same name,
-written in Inform 7.
+An interactive fiction adaptation by **Lucian Frost**, after the short story by
+Raymond Carver (from *What We Talk About When We Talk About Love*, 1981).
+Written in Inform 7.
 
 > In the kitchen, he poured another drink and looked at the bedroom suite in his front yard.
 
@@ -70,7 +71,20 @@ the sink nobody has cleaned.
 Carver never names the man, so he is "the man" throughout. The boy is Jack only
 because the girl says his name.
 
-## Licence
+The adaptation adds interiority the story deliberately withholds — the man's
+silence, the girl's failure to say what happened — while keeping Carver's
+dialogue intact wherever the game quotes it.
 
-The Inform 7 source is released under the MIT licence. The underlying short story
-is the property of the Carver estate; this is a non-commercial adaptation.
+## Credits and licence
+
+| | |
+|---|---|
+| Interactive adaptation | Lucian Frost |
+| Source story | Raymond Carver, "Why Don't You Dance?" (1981) |
+| Engine | Inform 7 v10.1.2 |
+
+The Inform 7 source of this adaptation is released under the MIT licence.
+
+The underlying short story remains the property of the Carver estate. This is a
+non-commercial adaptation: no text from the story is reproduced beyond short
+quotations of dialogue, and the work is not offered for sale.
