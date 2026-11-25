@@ -24,8 +24,14 @@ The act is a number variable. The act is 1.
   instead. If the clock runs out the act turns over on its own, and whatever
   was left undone is settled by the forced-advance rules below, so no act can
   ever begin in an unwinnable state. ]
-Turns_left is a number variable. Turns_left is 20.
+Turns_left is a number variable. Turns_left is 28.
 Act_clock_visible is a truth state variable. Act_clock_visible is false.
+
+[ Progress buys time. Every act ends eventually, but a player who is getting
+  somewhere is never going to be run over by the clock mid-discovery. ]
+To steady the afternoon:
+	if Turns_left is less than 10 and the act is not 5:
+		now Turns_left is 10.
 
 DrapsDown is a truth state variable. DrapsDown is false.
 
@@ -56,6 +62,8 @@ A glass is usually clean.
 A glass can be papered. A glass is usually papered.
 
 A disc is a kind of thing.
+
+The description of a glass is "[if papered]Wrapped in newspaper, like everything else in the carton. The paper would have to come off before anything could go into it.[otherwise if whiskied]There is whiskey in it, and it is doing nothing.[otherwise if diluted]Whiskey and water, and mostly water now.[otherwise]Clean, and empty, and out in the yard with everything else anybody ever drank from in this house.[end if]"
 
 [---------------------------------------------------------------------------]
 Volume 2 - The world
@@ -190,6 +198,11 @@ The description of the television is "A big console model, the kind that is furn
 Instead of switching on the television when Power is false:
 	say "You turn the dial. Nothing. The extension cord is still coiled by the garage door, and nothing out here has any current in it."
 
+Understand "turn on [something]" as switching on.
+Understand "turn off [something]" as switching off.
+Understand "turn up [something]" as switching on.
+Understand "turn down [something]" as switching off.
+
 Instead of switching on the television when Power is true:
 	now the television is switched on;
 	say "The screen comes up gray and full of specks, and then a shape resolves into a man selling something. You watch him for a while without hearing him."
@@ -256,6 +269,9 @@ The description of the plates is "Wrapped in newspaper, stacked on their edges."
 The first glass is a glass in the carton.
 The second glass is a glass in the carton.
 The third glass is a glass in the carton.
+Understand "glass" as the first glass.
+Understand "glass" as the second glass.
+Understand "glass" as the third glass.
 
 The extension cord is a thing in the Front Yard.
 The description of the extension cord is "Coiled by the garage door, orange, twenty-five feet of it. One end has a plug on it and the other end has three sockets. It has not been unwound."
@@ -289,14 +305,17 @@ The description of the record box is "A shoebox with records standing in it, lea
 
 The first disc is a disc in the record box.
 The printed name of the first disc is "record with a blue label".
+Understand "record with a blue label" and "blue label record" and "blue record" and "record with blue label" as the first disc.
 The description of the first disc is "A blue label, a list of song titles in small print. You do not remember buying it."
 
 The second disc is a disc in the record box.
 The printed name of the second disc is "record with a photograph on the sleeve".
+Understand "record with a photograph on the sleeve" and "record with the photograph" and "photograph record" and "sleeved record" and "record with a photo" and "record with a sleeve" as the second disc.
 The description of the second disc is "The sleeve has a photograph of a woman looking off to one side. She is not looking at anything in particular."
 
 The third disc is a disc in the record box.
 The printed name of the third disc is "record with no sleeve".
+Understand "record with no sleeve" and "sleeveless record" and "bare record" and "scratched record" and "no sleeve record" as the third disc.
 The description of the third disc is "Bare, scratched, no sleeve. Whatever was written on it has worn off."
 
 Book 6 - The market sack
@@ -404,11 +423,11 @@ Understand "pour from [something] into [something]" as pouring it into.
 
 Check pouring it into:
 	if the noun is not the bottle of whiskey:
-		say "[The noun] is not something you pour." instead;
+		say "[The noun] is not something you pour. There is the bottle of whiskey, and that is the only thing in this yard that pours." instead;
 	if the bottle of whiskey is closed:
-		say "The bottle is sealed. You would have to open it first." instead;
+		say "The bottle is sealed. Open it first." instead;
 	if the second noun is not a glass:
-		say "You need a glass." instead;
+		say "You need a glass. There are glasses in the carton, wrapped in newspaper." instead;
 	if the second noun is papered:
 		say "[The second noun] is still wrapped in newspaper. You would be pouring into the news." instead;
 	if the second noun is not clean:
@@ -417,6 +436,7 @@ Check pouring it into:
 Carry out pouring it into:
 	now the second noun is whiskied;
 	increase Drams by 1;
+	steady the afternoon;
 	if Drams is 1:
 		say "You pour. The whiskey goes into the glass and sits there, amber, doing nothing.";
 	otherwise if Drams is 2 and the act is 3:
@@ -428,7 +448,7 @@ Part 2 - Drinking
 
 Instead of drinking a glass:
 	if the noun is papered:
-		say "It is wrapped in newspaper. You would be drinking the news." instead;
+		say "It is wrapped in newspaper. The paper would have to come off first. Peel it. Unwrap it. Whatever word you want for taking the news off a glass." instead;
 	if the noun is clean:
 		say "[The noun] is empty." instead;
 	if the noun is diluted:
@@ -440,7 +460,7 @@ Instead of drinking a glass:
 
 Instead of drinking the bottle of whiskey:
 	if the bottle of whiskey is closed:
-		say "The bottle is sealed." instead;
+		say "The bottle is sealed. Open it first." instead;
 	increase Drams by 1;
 	if Drunk is 0:
 		increase Drunk by 1;
@@ -495,15 +515,18 @@ Understand "unwrap [something]" as peeling.
 Understand "strip [something]" as peeling.
 Understand "remove the newspaper from [something]" as peeling.
 Understand "take the newspaper off [something]" as peeling.
+Understand "take the newspaper from [something]" as peeling.
+Understand "unwrap the newspaper from [something]" as peeling.
 
 Check peeling:
 	if the noun is not a glass and the noun is not the cups and the noun is not the plates:
 		say "[The noun] is not wrapped in anything." instead;
 	if the noun is not papered:
-		say "[The noun] has already been unwrapped." instead.
+		say "[The noun] has already been unwrapped." instead;
 
 Carry out peeling:
 	now the noun is not papered;
+	steady the afternoon;
 	say "The newspaper comes away in one piece. You fold it once and put it down, and now there is [a noun] with nothing between it and the air."
 
 Book 3 - Current
@@ -512,18 +535,39 @@ Connecting it with is an action applying to two things.
 Understand "plug [something] into [something]" as connecting it with.
 Understand "connect [something] to [something]" as connecting it with.
 Understand "run [something] to [something]" as connecting it with.
+Understand "plug [something] in" as connecting it with.
 Understand "plug in [something]" as connecting it with.
+Understand "connect [something]" as connecting it with.
+Understand "plug it in" as connecting it with.
+Understand "plug them in" as connecting it with.
+
+[ A one-noun form, for "plug in the cord" and "connect the cord" and the
+  like: the socket is implied. Grammar "X in" would normally demand a second
+  noun; this detour supplies it. ]
+Plugging in is an action applying to one thing.
+Understand "plug in [the extension cord]" as plugging in.
+Understand "plug [the extension cord] in" as plugging in.
+Understand "connect [the extension cord]" as plugging in.
+Understand "run [the extension cord]" as plugging in.
+
+Carry out plugging in:
+	if Power is true:
+		say "It is already plugged in." instead;
+	now Power is true;
+	steady the afternoon;
+	say "You unwind the cord and run it across the grass to the wall of the house and push the plug into the socket. The flap closes over it.[paragraph break]Then you go along the row of things and put each plug into one of the sockets on the other end. The television. The floor lamp. The record player.[paragraph break]Things work. No different from how it was when they were inside."
 
 Check connecting it with:
 	if the noun is not the extension cord:
 		say "That is not something you plug in." instead;
-	if the second noun is not the outdoor socket:
-		say "There is nothing to plug it into there." instead;
+	if Power is false and the second noun is not the outdoor socket and the second noun is not nothing:
+		say "There is nothing to plug it into there. The socket on the side of the house is where the current lives." instead;
 	if Power is true:
 		say "It is already plugged in." instead.
 
 Carry out connecting it with:
 	now Power is true;
+	steady the afternoon;
 	say "You unwind the cord and run it across the grass to the wall of the house and push the plug into the socket. The flap closes over it.[paragraph break]Then you go along the row of things and put each plug into one of the sockets on the other end. The television. The floor lamp. The record player.[paragraph break]Things work. No different from how it was when they were inside."
 
 Book 4 - Money
@@ -534,12 +578,17 @@ Understand "want [number] for [something]" as pricing.
 Understand "charge [number] dollars for [something]" as pricing.
 Understand "quote [number] dollars for [something]" as pricing.
 Understand "quote [number] for [something]" as pricing.
+Understand "want [number] bucks for [something]" as pricing.
+Understand "sell [number]-dollar [something]" as pricing.
 
 Check pricing:
+	if the act is 1:
+		say "Nobody has come to buy anything yet. When somebody does, they will ask, and you will answer, and you will know what to say." instead;
 	if the second noun is not the bed and the second noun is not the television and the second noun is not the desk:
 		say "Nobody has asked about that." instead.
 
 Carry out pricing:
+	steady the afternoon;
 	if the second noun is the bed:
 		if BedSold is true:
 			say "The bed is already spoken for." instead;
@@ -588,10 +637,16 @@ Check playing:
 	if the noun is not a disc:
 		say "[The noun] is not a record." instead;
 	if the record player is switched off:
-		say "You would have to turn the record player on first." instead.
+		if Power is true:
+			now the record player is switched on;
+			say "You flip the switch on the record player first. The turntable turns, waiting.";
+		otherwise:
+			say "You would have to turn the record player on first, and it has no current in it. The cord is still coiled by the garage door." instead.
 
 Carry out playing:
 	now DiscLoaded is true;
+	now the record player is switched on;
+	steady the afternoon;
 	move the noun to the record player;
 	say "You set [the noun] down on the turntable and lift the arm over. The needle finds the groove and the music starts, and it is louder out here than it ever was inside, because there are no walls to hold it."
 
@@ -620,6 +675,8 @@ Carry out inviting:
 
 Dancing with is an action applying to one thing.
 Understand "dance with [someone]" as dancing with.
+Understand "dance with him" as dancing with.
+Understand "dance with her" as dancing with.
 
 Check dancing with:
 	if the act is not 4:
@@ -639,8 +696,22 @@ Carry out dancing with:
 
 Dancing is an action applying to nothing.
 Understand "dance" as dancing.
-Check dancing:
-	say "There is no one to dance with, and no music, and you are not the kind of man who dances alone in his own yard." instead.
+Carry out dancing:
+	if the act is 1:
+		say "There is no music, and no one, and the yard is not ready even for that.";
+	otherwise if the act is 2:
+		say "You are not the dancing kind, and neither, as far as you can tell, is he, and there is no music besides.";
+	otherwise if the act is 3:
+		say "There is a girl sitting on your bed and a boy with a checkbook open, and no music, and you are not the kind of man who dances alone in his own yard.";
+	otherwise if the act is 4:
+		if TheyDanced is false:
+			say "There is no music yet. The record player is out here on the grass, and it has current if the cord is run, and that is how an afternoon like this one gets started.";
+		otherwise if GirlDanced is false:
+			say "They are dancing already, the two of them, and you are standing at the edge of your own yard holding a drink.";
+		otherwise:
+			say "You have danced. Your back knows about it today.";
+	otherwise:
+		say "You are telling it, not doing it. The dancing lives in the telling now, and it comes out flat, the way things do when they have been out of the air too long."
 
 Book 8 - Telling
 
@@ -653,10 +724,11 @@ Understand "tell the story" as telling.
 
 Check telling:
 	if the act is not 5:
-		say "There is nothing to tell yet." instead.
+		say "There is nothing to tell yet. It has not happened, or it has not finished happening, and a story cannot be told out of the middle of itself." instead.
 
 Carry out telling:
 	increase Tellings by 1;
+	steady the afternoon;
 	if Tellings is 1:
 		say "[']The guy was about middle-aged. All his things right there in his yard. No lie. We got real pissed and danced. In the driveway. Oh, my God. Don[']t laugh. He played us these records. Look at this record-player. The old guy gave it to us. And all these crappy records. Will you look at this shit?[']";
 	otherwise if Tellings is 2:
@@ -665,7 +737,7 @@ Carry out telling:
 		say "You start in on it a third time and hear yourself doing it. [']The guy was about middle-aged,['] you say, and the words come out of you like something you memorized.[paragraph break]There is more to it than that. There is something under it that you have not got at yet, and you can feel it there, and the more you talk the further down it goes.";
 	otherwise:
 		now ToldEnough is true;
-		say "You are talking. You know you are talking. The person across from you has stopped listening, in the polite way, and you can see it, and you keep talking.[paragraph break]There was more to it. There was something you were trying to get said out loud, and every time you say it, it gets a little further away, and now it is somewhere you cannot point to.".
+		say "You are talking. You know you are talking. The person across from you has stopped listening, in the polite way, and you can see it, and you keep talking.[paragraph break]There was more to it. There was something you were trying to get said out loud, and every time you say it, it gets a little further away, and now it is somewhere you cannot point to.[paragraph break]You could go on. Or you could quit trying.".
 
 Stopping is an action applying to nothing.
 Understand "quit trying" as stopping.
@@ -678,10 +750,25 @@ Check stopping:
 	if the act is not 5:
 		say "There is nothing to stop trying." instead;
 	if Tellings is less than 2:
-		say "Not yet. You have not said it once. Say it once, at least, before you let it go." instead.
+		say "Not yet. You have not said it once. Tell it first, at least, before you let it go." instead.
 
 Carry out stopping:
 	end the story finally saying "You stop. The person across from you says something kind and you nod at it.[paragraph break]After a time, you quit trying.".
+
+[ The title of the story is an instruction. Give the player a way to find
+  the stopping without guessing at the phrase. ]
+Quitting the story is an action applying to nothing.
+Understand "quit trying to say it" and "stop the story" and "quit the story" as quitting the story.
+Understand "quit trying" and "stop trying" and "give up" and "say nothing" and "be quiet" as stopping.
+
+Check quitting the story:
+	if the act is not 5:
+		say "The story is not being told yet, so there is nothing to stop." instead;
+	if Tellings is less than 2:
+		say "Not yet. Tell it first. Then see whether you can stop." instead.
+
+Carry out quitting the story:
+	try stopping.
 
 Book 9 - Looking
 
@@ -744,35 +831,52 @@ Book 9B - Directions that do not exist
 
 The can't go that way rule is not listed in any rulebook.
 
+Instead of going to the Sidewalk when the act is 5:
+	say "You are not going anywhere. You are in the middle of telling it.";
+
 Check going when the room gone to is nothing:
-	if the act is 5:
-		say "You are not going anywhere. You are in the middle of telling it.";
-	otherwise if the noun is up or the noun is down:
-		if the act is 2:
-			say "Up there is only the sky, and it is not dark enough yet for anything to be in it.";
-		otherwise if the act is 4:
-			say "The sky, and under it the grass, and the music going up into both of them.";
-		otherwise:
-			say "The sky, and under it the grass. Neither one has anything in it that belongs to you now.";
-	otherwise if the noun is inside or the noun is outside:
-		if the player is in the Kitchen:
-			say "In is where you are standing, and out is through the door at the bottom of it. There is no third place.";
-		otherwise:
-			say "There is no inside left to go into. It is all out here, and you are in the middle of it.";
+	if the act is 1 and the player is in the Kitchen:
+		say "The kitchen is small, and you have already walked the length of it twice this afternoon. There is nothing down that side of it but the wall.";
+	otherwise if the act is 1:
+		say "The neighbor[']s yard. They have been at their window all afternoon, and you are not going over there to explain any of this.";
+	otherwise if the act is 2:
+		say "Somebody else[']s yard, with somebody else[']s things in it. You are here to look at a bed, not to wander.";
+	otherwise if the act is 3:
+		say "Off the edge of the property. You have a glass in your hand and a boy with a checkbook waiting, and the afternoon is not finished.";
 	otherwise:
-		if the act is 1 and the player is in the Kitchen:
-			say "The kitchen is small, and you have already walked the length of it twice this afternoon. There is nothing down that side of it but the wall.";
-		otherwise if the act is 1:
-			say "The neighbor[']s yard. They have been at their window all afternoon, and you are not going over there to explain any of this.";
-		otherwise if the act is 2:
-			say "Somebody else[']s yard, with somebody else[']s things in it. You are here to look at a bed, not to wander.";
-		otherwise if the act is 3:
-			say "Off the edge of the property. You have a glass in your hand and a boy with a checkbook waiting, and the afternoon is not finished.";
-		otherwise:
-			say "The neighbor[']s yard, and the neighbor[']s window, and the neighbor watching. Let them watch from there.";
+		say "The neighbor[']s yard, and the neighbor[']s window, and the neighbor watching. Let them watch from there.";
 	stop the action.
 
 Book 9C - Special verbs
+
+[ The point of view changes but the things a player will try do not. These
+  are answered in the voice of whoever is holding the story at the moment. ]
+
+[ "thinking" and "buying" already exist in the Standard Rules. Take them over:
+  keep the action, bind extra grammar, and replace the responses. ]
+Understand "remember" as thinking.
+Understand "what now" as thinking.
+Understand "purchase [something]" as buying.
+Understand "price [something]" as buying.
+Understand "ask the price of [something]" as buying.
+Understand "ask about [something]" as buying.
+
+The block thinking rule is not listed in any rulebook.
+
+Report thinking:
+	if the act is 1:
+		say "There is a house to empty and an afternoon to fill and nobody to fill it with. The cord is still coiled by the garage door and the record player has no current, and a drink would not be wrong. The yard is not going anywhere. It will be there when you are.";
+	otherwise if the act is 2:
+		say "There is a bed here, and the boy will not come near it on his own, and you have not tried it yourself. Whatever else a person does at a yard sale, trying the bed comes first.";
+	otherwise if the act is 3:
+		if CigaretteFound is false:
+			say "The television is going and nobody is watching it, and the boy has a checkbook and the girl has an opinion about the bed. Somebody put a cigarette out somewhere, or dropped one. There is a sofa in this yard with a gap in it deep enough to lose things in, and that is where things go.";
+		otherwise:
+			say "They want the bed and the TV and maybe the desk, and you have the whiskey, and there is a record player on the grass that works if the power does. All of that is just conversation. The afternoon is the conversation.";
+	otherwise if the act is 4:
+		say "There is a record going, and whiskey, and two young people in your yard who have not danced yet. Say why don[']t you dance. It is your yard. They can dance in it if they want to. That is what it is for now.";
+	otherwise:
+		say "There is a person across the table who has not heard this before, or says they have not. Tell it. Tell it until it stops being a story about a yard sale, or until you see that it will never be anything else, and then stop.";
 
 Crying is an action applying to nothing.
 Understand "cry" as crying.
@@ -816,7 +920,23 @@ Check feeling:
 Book 9E - Naming what is not here yet
 
 [ In Act One the visitors have not arrived. If the player names them anyway,
-  the answer should be the man's, not the parser's. ]
+  the answer should be the man's, not the parser's — so they are kept in
+  scope, where the rules below can speak for them. ]
+
+Rule for deciding the scope of the player:
+	[ A for-rule here REPLACES the default room search entirely, so the
+	  location and the compass must be re-added by hand. ]
+	place the location in scope;
+	repeat with D running through directions:
+		place D in scope;
+	if the act is 1:
+		place the girl in scope;
+		place the boy in scope;
+		place the car in scope;
+	otherwise if the act is 2:
+		place the seller in scope;
+	otherwise if the act is 5:
+		place the boy in scope.
 
 Instead of doing something to the girl when the act is 1:
 	say "There is nobody here but you and the yard."
@@ -880,7 +1000,13 @@ Instead of going to the Sidewalk when the act is 1 and Power is true and Drams i
 	begin act two.
 
 Instead of going to the Sidewalk when the act is 1:
-	say "Not yet. The house is still standing out here in the yard with no current in it and no one looking at it, and you have not had a drink." instead.
+	say "Not yet. You are not ready to walk out to the street and leave all this standing on the grass.";
+	if Power is false:
+		say "[line break]Everything out here ends in a plug that goes nowhere. The extension cord is still coiled by the garage door, and there is a socket on the side of the house.";
+	if SawBed is false:
+		say "[line break]You have not even been out to look at the bed. It is standing in the middle of the yard made up for somebody to sleep in.";
+	if Drams is 0:
+		say "[line break]The seal on the bottle is still on it. A drink first. That is not asking much of an afternoon like this one." instead.
 
 Part 2 - Act One's small business
 
@@ -914,7 +1040,12 @@ To begin act three:
 	say "[paragraph break][bold type]Act Three[roman type][line break]The man, coming back.[paragraph break]The boy goes along the front of the house, looking for a bell that works. You follow him as far as the steps.[paragraph break]And then, from away down the street, a man comes along the sidewalk with a sack from the market.".
 
 Instead of going to the Kitchen when the act is 2:
-	say "Not yet. There is a bed here that is forty dollars and nobody has tried it but you.[if the player is on the bed][paragraph break]You would have to get off it first.[end if]" instead.
+	say "Not yet. The kitchen door stands open into a house with nothing in it, and going in there would end something that has not been finished.";
+	say "[line break]The bed is here, and you have not even tried it, and a bed like this one has to be tried before anybody can say what it is worth.";
+	if the player is on the bed and Kissed is false:
+		say "[line break]He is right there at the edge of it. Kiss him. If it is going to happen, it happens out here, where the whole yard can watch or not.";
+	otherwise if Kissed is false:
+		say "[line break]Lie down on the bed and see what happens after that." instead.
 
 Part 2 - Act Two's small business
 
@@ -955,13 +1086,27 @@ Instead of examining the boy when the act is 2:
 
 Book 4 - Act Three, the man returns
 
+ActThreeBegun is a truth state variable. ActThreeBegun is false.
+
 Part 1 - The gate out of Act Three
 
-Instead of going to the Sidewalk when the act is 3:
+Instead of going to the Front Yard when the act is 3 and ActThreeBegun is false:
+	now ActThreeBegun is true;
 	now the player is the seller;
 	move the seller to the Front Yard;
 	move the sack to the seller;
+	steady the afternoon;
 	say "You come down the sidewalk with the sack from the market. Sandwiches, beer, whiskey. You see the car in the drive and the girl by the bed, and you see the television going and the boy standing off at the edge of it.[paragraph break][']Hello,['] you say to the girl. [']You found the bed. That[']s good.['][paragraph break][']Hello,['] she says, and gets up. [']I was just trying it out.['] She pats the bed. [']It[']s a pretty good bed.['][paragraph break][']It[']s a good bed,['] you say, and put down the sack and take out the beer and the whiskey.[paragraph break][']We thought nobody was here,['] the boy says. [']We[']re interested in the bed and maybe in the TV. Also maybe the desk. How much do you want for the bed?[']".
+
+Instead of going to the Sidewalk when the act is 3 and ActThreeBegun is false:
+	now ActThreeBegun is true;
+	now the player is the seller;
+	move the seller to the Sidewalk;
+	move the sack to the seller;
+	say "You stand on your own sidewalk, holding a sack of groceries, while somebody else's boy looks for a bell that works on your house. There is nothing left in the sack but the walking back."
+
+Instead of going to the Sidewalk when the act is 3:
+	say "The street is out past the end of the drive, and you have no business on it. Everything this afternoon is about to happen right here."
 
 Part 2 - The beats of Act Three
 
@@ -1014,7 +1159,7 @@ To begin act five:
 	move the girl to the Later Kitchen;
 	move the seller to the Later Kitchen;
 	now the player is the girl;
-	say "[paragraph break][bold type]Act Five[roman type][line break]Weeks later, a kitchen, someone listening.".
+	say "[paragraph break][bold type]Act Five[roman type][line break]Weeks later, a kitchen, someone listening.[paragraph break]You could tell it. Or you could quit trying. Those are the two things left."
 
 Part 2 - The beats of Act Five
 
@@ -1027,7 +1172,24 @@ Instead of listening when the act is 5:
 Instead of looking when the act is 5:
 	say "A kitchen that is not yours, in a house that is not yours, with a person in it who has heard this before and is willing to hear it again."
 
-Book 6A - The clock
+Book 6A - Trying to buy things
+
+Check buying:
+	if the noun is the bed or the noun is the television or the noun is the desk:
+		if the act is 1:
+			say "These things are not for sale to you. They are yours, which is the problem, and they are out on the grass, which is the rest of it." instead;
+		if the act is 2:
+			say "You are the one doing the buying here, or trying to. You have not been able to find the owner yet to ask what he wants for it." instead;
+		if the act is 3:
+			say "You name a figure, or let them name one. The way it goes with the bed is, you say what you want for it and she says what she will give." instead;
+		say "That has been settled already, one way or another." instead;
+	if the act is 1:
+		say "Nobody is selling anything today except you, and what you are selling is all of it." instead;
+	if the act is 2:
+		say "Whatever is for sale here is for sale to you, not by you." instead;
+	if the act is 3 or the act is 4:
+		say "This is not your yard sale. It is his." instead;
+	say "There is nothing to buy in this kitchen, and nothing you need."
 
 [ One turn of the clock per player turn. The countdown is never shown as a
   number; at three remaining the prose starts to hurry, and at zero the act
@@ -1075,6 +1237,12 @@ This is the forced advance rule:
 		begin act three;
 	otherwise if the act is 3:
 		[ The bargaining closes itself. Nobody is left out of pocket. ]
+		if ActThreeBegun is false:
+			now ActThreeBegun is true;
+			now the player is the seller;
+			move the seller to the Front Yard;
+			move the sack to the seller;
+			say "[paragraph break]You come down the sidewalk with the sack from the market and the afternoon meets you halfway. The girl is by the bed and the boy is at the edge of it, and they want the bed and the TV and maybe the desk.";
 		if BedSold is false:
 			now BedSold is true;
 			say "[paragraph break][']Forty,['] she says, and you say forty, and that is the bed gone.";
@@ -1122,3 +1290,13 @@ Test act4 with "s / open bottle / peel first glass / take first glass / pour whi
 Test act5 with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug cord into socket / switch on television / want 40 dollars for bed / s / lie down / kiss boy / n / n / n / s / switch on record player / play first disc / invite boy to dance / invite girl to dance / dance with girl / tell / tell / tell / tell / quit trying".
 
 Test short with "quit trying / tell / s / x bed / s".
+
+[ Regression: the four complaints from the first public review. Each must
+  produce prose, never a parser error. ]
+Test review-dance with "s / dance / think / x me / x girl / open bottle / peel first glass / pour whiskey into first glass / drink first glass / x bed / plug in the cord / switch on television / want 40 dollars for bed / s / think / dance / x me / lie down / kiss boy / n / n / search sofa / think / switch on record player / play record with the photograph / dance / invite boy to dance / invite girl to dance / dance with girl / think / tell / tell / tell / tell / quit trying".
+
+Test review-discs with "s / x record with a blue label / take record with a blue label / get sleeveless record / x record with the photograph / quit trying / quit".
+
+Test review-act1 with "think / s / x glass / x cups / want 40 dollars for bed / plug in extension cord / connect extension cord / s".
+
+Test review-clock with "s / open bottle / peel first glass / take first glass / pour whiskey into first glass / drink first glass / x bed / plug in the cord / s / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / wait / x me / think".

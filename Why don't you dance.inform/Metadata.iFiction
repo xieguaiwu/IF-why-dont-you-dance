@@ -17,14 +17,14 @@
         </bibliographic>
         <cover>
             <format>jpg</format>
-            <height>1200</height>
-            <width>1200</width>
+            <height>960</height>
+            <width>960</width>
             <description>Cover.jpg</description>
         </cover>
         <releases>
             <attached>
                 <release>
-                    <releasedate>2026-11-07</releasedate>
+                    <releasedate>2026-11-25</releasedate>
                     <version>1</version>
                     <compiler>Inform 7</compiler>
                     <compilerversion>Inform 10.1.2 (build )</compilerversion>
@@ -34,10 +34,10 @@
         <colophon>
             <generator>Inform 7</generator>
             <generatorversion>Inform 10.1.2 (build )</generatorversion>
-            <originated>2026-11-07</originated>
+            <originated>2026-11-25</originated>
         </colophon>
         <glulx>
-            <serial>261107</serial>
+            <serial>261125</serial>
             <release>1</release>
             <compiler>Inform Inform 10.1.2 (build )</compiler>
             <coverpicture>1</coverpicture>
