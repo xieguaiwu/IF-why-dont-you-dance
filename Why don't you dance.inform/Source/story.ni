@@ -63,6 +63,10 @@ A glass can be papered. A glass is usually papered.
 
 A disc is a kind of thing.
 
+The record in play is a disc that varies. The record in play is the third disc.
+
+Definition: a disc is playing if it is the record in play and the record player is switched on.
+
 The description of a glass is "[if papered]Wrapped in newspaper, like everything else in the carton. The paper would have to come off before anything could go into it.[otherwise if whiskied]There is whiskey in it, and it is doing nothing.[otherwise if diluted]Whiskey and water, and mostly water now.[otherwise]Clean, and empty, and out in the yard with everything else anybody ever drank from in this house.[end if]"
 
 [---------------------------------------------------------------------------]
@@ -286,7 +290,7 @@ Book 5 - The records
 The record player is a device in the Front Yard.
 The printed name of the record player is "record player".
 Understand "phonograph" as the record player.
-The description of the record player is "A portable one in a plastic case, the lid propped open, the turntable bare. [if Power is true]It has current.[otherwise]Its cord ends in a plug that is connected to nothing.[end if]"
+The description of the record player is "A portable one in a plastic case, the lid propped open, [if the record player is switched on and DiscLoaded is true]a record turning on the turntable.[otherwise if DiscLoaded is true]a record sitting on the bare turntable.[otherwise]the turntable bare.[end if] [if Power is true]It has current.[otherwise]Its cord ends in a plug that is connected to nothing.[end if]"
 
 Instead of switching on the record player when Power is false:
 	say "Nothing happens. Nothing out here has any current in it yet."
@@ -306,17 +310,17 @@ The description of the record box is "A shoebox with records standing in it, lea
 The first disc is a disc in the record box.
 The printed name of the first disc is "record with a blue label".
 Understand "record with a blue label" and "blue label record" and "blue record" and "record with blue label" as the first disc.
-The description of the first disc is "A blue label, a list of song titles in small print. You do not remember buying it."
+The description of the first disc is "A blue label, a list of song titles in small print. You do not remember buying it.[if the first disc is playing] It is turning on the turntable now, playing something with strings in it, the same strings as the radio two houses down, as if the neighborhood had agreed on the one song.[end if]"
 
 The second disc is a disc in the record box.
 The printed name of the second disc is "record with a photograph on the sleeve".
 Understand "record with a photograph on the sleeve" and "record with the photograph" and "photograph record" and "sleeved record" and "record with a photo" and "record with a sleeve" as the second disc.
-The description of the second disc is "The sleeve has a photograph of a woman looking off to one side. She is not looking at anything in particular."
+The description of the second disc is "The sleeve has a photograph of a woman looking off to one side. She is not looking at anything in particular.[if the second disc is playing] It is playing now, and the woman on the sleeve is still not looking at anything in particular, but the music under her is loud and young and does not care.[end if]"
 
 The third disc is a disc in the record box.
 The printed name of the third disc is "record with no sleeve".
 Understand "record with no sleeve" and "sleeveless record" and "bare record" and "scratched record" and "no sleeve record" as the third disc.
-The description of the third disc is "Bare, scratched, no sleeve. Whatever was written on it has worn off."
+The description of the third disc is "Bare, scratched, no sleeve. Whatever was written on it has worn off.[if the third disc is playing] The needle rides the scratches, and between them something comes up out of the groove, older than the rest of the afternoon, and neither of the kids says anything while it plays.[end if]"
 
 Book 6 - The market sack
 
@@ -633,6 +637,17 @@ Understand "choose [something]" as playing.
 Understand "put [something] on the record player" as playing.
 Understand "put on [something]" as playing.
 
+[ "put X on Y" belongs to the Standard Rules' putting it on. Instead of unlisting
+  its whole rulebook, intercept in a Before rule: discs on the player become
+  playing; everything else answers in the story's voice. ]
+Before putting something on:
+	if the second noun is the record player:
+		if the noun is a disc:
+			try playing the noun instead;
+		say "The turntable is for records. [The noun] is not a record." instead;
+	if the noun is a disc:
+		say "The only place a record goes is the record player, and that is out on the grass." instead.
+
 Check playing:
 	if the noun is not a disc:
 		say "[The noun] is not a record." instead;
@@ -647,8 +662,14 @@ Carry out playing:
 	now DiscLoaded is true;
 	now the record player is switched on;
 	steady the afternoon;
-	move the noun to the record player;
-	say "You set [the noun] down on the turntable and lift the arm over. The needle finds the groove and the music starts, and it is louder out here than it ever was inside, because there are no walls to hold it."
+	now the record in play is the noun;
+	say "You set [the noun] down on the turntable and lift the arm over.";
+	if the noun is the first disc:
+		say "[paragraph break]The music starts. Strings, mostly, and a singer with no voice to speak of, and it is louder out here than it ever was inside, because there are no walls to hold it.";
+	otherwise if the noun is the second disc:
+		say "[paragraph break]The music starts, loud and young, and it is louder out here than it ever was inside, because there are no walls to hold it. The woman on the sleeve watches the yard without watching it.";
+	otherwise:
+		say "[paragraph break]The needle rides the scratches and then finds what is under them, something slow and older than the rest of the afternoon, and it is louder out here than it ever was inside, because there are no walls to hold it. Nobody says anything until it is over."
 
 Book 7 - Dancing
 
