@@ -7,6 +7,7 @@ Use the serial comma.
 The story headline is "after Raymond Carver".
 
 Release along with cover art ("Cover.jpg").
+The release number is 2.
 The story genre is "Literary".
 The story description is "An interactive adaptation of Raymond Carver's short story. A house is emptied onto a lawn. Two people stop to look. Five acts, two points of view, and the thing that cannot be said."
 

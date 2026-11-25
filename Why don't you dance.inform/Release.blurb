@@ -19,7 +19,7 @@ picture 1 "/home/xieguiawu/Inform 7/Why don't You Dance/Why don't you dance.mate
 ! Placeholder variables
 
 placeholder [IFID] = "1395612E-70A4-4430-979D-838BD31BF28C"
-placeholder [RELEASE] = "1"
+placeholder [RELEASE] = "2"
 placeholder [YEAR] = "2026"
 placeholder [TITLE] = "Why Don't You Dance"
 placeholder [AUTHOR] = "Lucian Frost"
